@@ -7,6 +7,7 @@ class CustomCommand(Command):
 
     def handle(self) -> int:
         self.line("My command")
+        print("My actual command though")
         return 0
 
 

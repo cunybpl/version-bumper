@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "version_bumper"
+version = "0.1.0"
+description = ""
+authors = ["Kuba Gasiorowski <kgasiorowski123@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+poetry = "^1.8.3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."poetry.plugin"]
+test = "version_bumper.test:MyApplicationPlugin"

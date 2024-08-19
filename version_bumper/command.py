@@ -1,5 +1,4 @@
 from poetry.console.commands.version import Command as VersionCommand
-from poetry.console.commands.command import Command
 from cleo.io.inputs.argument import Argument
 from cleo.io.inputs.option import Option
 from cleo.helpers import argument
@@ -18,7 +17,7 @@ def factory() -> "VersionBumperCommand":
     return VersionBumperCommand
 
 
-class VersionBumperCommand(Command):
+class VersionBumperCommand(VersionCommand):
     name = "bumpversion"
     description = "Bumps a project's version."
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "version_bumper"
-version = "0.1.0"
+version = "0.1.1a0"
 description = ""
 authors = ["Kuba Gasiorowski <kgasiorowski123@gmail.com>"]
 readme = "README.md"

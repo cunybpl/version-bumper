@@ -4,6 +4,7 @@ from cleo.testers.application_tester import ApplicationTester
 from poetry.factory import Factory
 from tests.helpers import TestApplication, TestVersionBumperCommand
 from poetry.poetry import Poetry
+from version_bumper.command import VersionBumperCommand
 
 
 @pytest.fixture
@@ -26,3 +27,8 @@ def poetry(simple_project_path: Path) -> Poetry:
 @pytest.fixture
 def versionbumper_cmd_tester(poetry: Poetry) -> TestVersionBumperCommand:
     return TestVersionBumperCommand(poetry)
+
+
+@pytest.fixture
+def command_instance():
+    return VersionBumperCommand()

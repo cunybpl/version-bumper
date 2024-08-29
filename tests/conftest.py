@@ -27,8 +27,3 @@ def poetry(simple_project_path: Path) -> Poetry:
 @pytest.fixture
 def versionbumper_cmd_tester(poetry: Poetry) -> TestVersionBumperCommand:
     return TestVersionBumperCommand(poetry)
-
-
-@pytest.fixture
-def command_instance():
-    return VersionBumperCommand()

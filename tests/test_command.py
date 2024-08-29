@@ -1,8 +1,9 @@
 import pytest
 from version_bumper.command import VersionBumperCommand
+from poetry.poetry import Poetry
 
 
-def test_increment_version(command_instance: VersionBumperCommand):
+def test_increment_version():
     cmd = VersionBumperCommand()
 
     assert str(cmd.increment_version("0.1.0", "minor")) == "0.2.0"
@@ -15,3 +16,7 @@ def test_increment_version(command_instance: VersionBumperCommand):
 
     with pytest.raises(ValueError):
         cmd.increment_version("0.1.0", "abc123")
+
+
+def test_poetry(poetry: Poetry):
+    print(poetry.file)

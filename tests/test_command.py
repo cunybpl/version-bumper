@@ -83,10 +83,10 @@ def test_handle_dry_run(
 
     # Patch our helper functions
     pyproj_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version"
+        "version_bumper.command.VersionBumperCommand._update_version_in_pyproj"
     )
     versionpy_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version_file"
+        "version_bumper.command.VersionBumperCommand._update_version_file"
     )
     createtag_patch = mocker.patch(
         "version_bumper.command.VersionBumperCommand._create_tag", return_value=0
@@ -121,10 +121,10 @@ def test_handle_create_tag_no_push(
 
     # Patch our helper functions
     pyproj_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version"
+        "version_bumper.command.VersionBumperCommand._update_version_in_pyproj"
     )
     versionpy_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version_file"
+        "version_bumper.command.VersionBumperCommand._update_version_file"
     )
     createtag_patch = mocker.patch(
         "version_bumper.command.VersionBumperCommand._create_tag", return_value=0
@@ -158,10 +158,10 @@ def test_handle_create_tag_and_push(
 
     # Patch our helper functions
     pyproj_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version"
+        "version_bumper.command.VersionBumperCommand._update_version_in_pyproj"
     )
     versionpy_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version_file"
+        "version_bumper.command.VersionBumperCommand._update_version_file"
     )
     createtag_patch = mocker.patch(
         "version_bumper.command.VersionBumperCommand._create_tag", return_value=0
@@ -195,10 +195,10 @@ def test_handle_bash_tag_create_fail(
 
     # Patch our helper functions
     pyproj_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version"
+        "version_bumper.command.VersionBumperCommand._update_version_in_pyproj"
     )
     versionpy_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version_file"
+        "version_bumper.command.VersionBumperCommand._update_version_file"
     )
     mocker.patch("version_bumper.command.VersionBumperCommand.line_error")
 
@@ -236,10 +236,10 @@ def test_handle_bash_tag_push_fail(
 
     # Patch our helper functions
     pyproj_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version"
+        "version_bumper.command.VersionBumperCommand._update_version_in_pyproj"
     )
     versionpy_patch = mocker.patch(
-        "version_bumper.command.VersionBumperCommand._write_new_version_file"
+        "version_bumper.command.VersionBumperCommand._update_version_file"
     )
     mocker.patch("version_bumper.command.VersionBumperCommand.line_error")
 

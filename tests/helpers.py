@@ -1,13 +1,6 @@
 from poetry.poetry import Poetry
-from poetry.console.application import Application
 from version_bumper.plugin import VersionBumperCommand
 from typing import Any
-
-
-class TestApplication(Application):
-    def __init__(self, poetry: Poetry) -> None:
-        super().__init__()
-        self._poetry = poetry
 
 
 class TestVersionBumperCommand(VersionBumperCommand):

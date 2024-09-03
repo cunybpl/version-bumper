@@ -81,12 +81,10 @@ patch, minor, major, prepatch, preminor, premajor, prerelease.
 
         if not dry_run:
             self.line("Bumping version in pyproject.toml...")
-            self._write_new_version(new_version)
+            self._update_version_in_pyproj(new_version)
 
             self.line(f"Bumping {module_name}/_version.py file...")
-            self._write_new_version_file(
-                module_path=module_path, new_version=new_version
-            )
+            self._update_version_file(module_path=module_path, new_version=new_version)
 
             if tag:
                 self.line("Creating tag...")
@@ -115,13 +113,13 @@ patch, minor, major, prepatch, preminor, premajor, prerelease.
             )
         return process.returncode
 
-    def _write_new_version(self, new_version: Version) -> None:
+    def _update_version_in_pyproj(self, new_version: Version) -> None:
         content: dict[str, Any] = self.poetry.file.read()
         poetry_content = content["tool"]["poetry"]
         poetry_content["version"] = str(new_version)
         self.poetry.file.write(content)  # type: ignore
 
-    def _write_new_version_file(
+    def _update_version_file(
         self, module_path: pathlib.Path, new_version: Version
     ) -> None:
         with open(module_path / "_version.py", "w") as _version:

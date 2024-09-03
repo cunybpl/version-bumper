@@ -2,7 +2,7 @@ import pytest
 from pathlib import Path
 from cleo.testers.application_tester import ApplicationTester
 from poetry.factory import Factory
-from tests.helpers import TestApplication, TestVersionBumperCommand
+from tests.helpers import TestVersionBumperCommand
 from poetry.poetry import Poetry
 from typing import Any
 
@@ -10,13 +10,6 @@ from typing import Any
 @pytest.fixture
 def simple_project_path() -> Path:
     return Path(__file__).parent / "fixtures" / "simple_project"
-
-
-@pytest.fixture
-def test_app(simple_project_path: Path):
-    poetry = Factory().create_poetry(simple_project_path)
-    app = TestApplication(poetry)
-    return ApplicationTester(app)
 
 
 @pytest.fixture
